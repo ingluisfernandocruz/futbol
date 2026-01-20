@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Repositorio de Recursos Educativos</title>
+  <style>
+    :root {
+      --azul: #2b7dbc;
+      --azul-claro: #e8f2fb;
+      --gris: #f4f4f4;
+      --verde: #4caf50;
+      --naranja: #ff9800;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--gris);
+    }
+
+    header {
+      background: linear-gradient(90deg, #1e6fa8, #4fa3d1);
+      color: white;
+      padding: 15px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 20px;
+    }
+
+    header button {
+      background: #1e88e5;
+      color: white;
+      border: none;
+      padding: 8px 14px;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    .container {
+      display: grid;
+      grid-template-columns: 260px 1fr 300px;
+      gap: 15px;
+      padding: 15px;
+    }
+
+    aside {
+      background: white;
+      border-radius: 6px;
+      padding: 15px;
+    }
+
+    aside h3 {
+      margin-top: 0;
+      color: var(--azul);
+    }
+
+    .filtro {
+      margin-bottom: 15px;
+    }
+
+    .filtro label {
+      display: block;
+      margin: 4px 0;
+      font-size: 14px;
+    }
+
+    main {
+      background: white;
+      border-radius: 6px;
+      padding: 15px;
+    }
+
+    .buscador {
+      display: flex;
+      margin-bottom: 15px;
+    }
+
+    .buscador input {
+      flex: 1;
+      padding: 8px;
+      border: 1px solid #ccc;
+      border-radius: 4px 0 0 4px;
+    }
+
+    .buscador button {
+      padding: 8px 14px;
+      border: none;
+      background: var(--azul);
+      color: white;
+      border-radius: 0 4px 4px 0;
+      cursor: pointer;
+    }
+
+    .recurso {
+      border-bottom: 1px solid #eee;
+      padding: 10px 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .recurso:last-child {
+      border-bottom: none;
+    }
+
+    .recurso-info h4 {
+      margin: 0 0 4px 0;
+    }
+
+    .recurso-info span {
+      font-size: 13px;
+      color: #666;
+    }
+
+    .recurso button {
+      border: none;
+      padding: 8px 12px;
+      border-radius: 4px;
+      color: white;
+      cursor: pointer;
+    }
+
+    .pdf { background: var(--verde); }
+    .video { background: var(--azul); }
+    .ppt { background: var(--naranja); }
+
+    .detalles {
+      background: white;
+      border-radius: 6px;
+      padding: 15px;
+    }
+
+    .detalles h3 {
+      margin-top: 0;
+      color: var(--azul);
+    }
+
+    .detalles ul {
+      padding-left: 18px;
+      font-size: 14px;
+    }
+
+    footer {
+      text-align: center;
+      font-size: 13px;
+      padding: 10px;
+      color: #666;
+    }
+
+    @media (max-width: 900px) {
+      .container {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Repositorio de Recursos Educativos Digitales</h1>
+  <button>Iniciar sesión</button>
+</header>
+
+<div class="container">
+  <!-- Filtros -->
+  <aside>
+    <h3>Filtros</h3>
+    <div class="filtro">
+      <strong>Tipo de recurso</strong>
+      <label><input type="checkbox" checked /> Documento PDF</label>
+      <label><input type="checkbox" checked /> Video</label>
+      <label><input type="checkbox" checked /> Presentación</label>
+      <label><input type="checkbox" checked /> Imagen</label>
+    </div>
+
+    <div class="filtro">
+      <strong>Nivel educativo</strong>
+      <label><input type="checkbox" /> Primaria</label>
+      <label><input type="checkbox" /> Secundaria</label>
+      <label><input type="checkbox" /> Bachillerato</label>
+      <label><input type="checkbox" /> Universidad</label>
+    </div>
+  </aside>
+
+  <!-- Lista de recursos -->
+  <main>
+    <div class="buscador">
+      <input type="text" placeholder="Buscar recursos..." />
+      <button>Buscar</button>
+    </div>
+
+    <div class="recurso">
+      <div class="recurso-info">
+        <h4>Guía de aprendizaje sobre el Cuerpo Humano</h4>
+        <span>Documento PDF · Ciencias Naturales</span>
+      </div>
+      <button class="pdf">Descargar</button>
+    </div>
+
+    <div class="recurso">
+      <div class="recurso-info">
+        <h4>Historia y Geografía de América</h4>
+        <span>Video educativo · Ciencias Sociales</span>
+      </div>
+      <button class="video">Ver video</button>
+    </div>
+
+    <div class="recurso">
+      <div class="recurso-info">
+        <h4>Presentación sobre Cambio Climático</h4>
+        <span>Presentación · Ciencias Naturales</span>
+      </div>
+      <button class="ppt">Descargar</button>
+    </div>
+      <script>
+      const recursos = [
+        { titulo: 'Guía del Cuerpo Humano', tipo: 'pdf', nivel: 'Primaria', area: 'Ciencias' },
+        { titulo: 'Sistema Solar', tipo: 'pdf', nivel: 'Secundaria', area: 'Ciencias' },
+        { titulo: 'Historia de América', tipo: 'video', nivel: 'Secundaria', area: 'Sociales' },
+        { titulo: 'Cambio Climático', tipo: 'ppt', nivel: 'Bachillerato', area: 'Ciencias' },
+        { titulo: 'Ecosistemas', tipo: 'video', nivel: 'Primaria', area: 'Ciencias' },
+        { titulo: 'Mapa Político de Colombia', tipo: 'imagen', nivel: 'Primaria', area: 'Sociales' }
+      ];
+
+      const contenedor = document.createElement('div');
+      contenedor.id = 'lista-dinamica';
+      document.querySelector('main').appendChild(contenedor);
+
+      function render(lista) {
+        contenedor.innerHTML = '';
+        lista.forEach(r => {
+          const div = document.createElement('div');
+          div.className = 'recurso';
+          div.innerHTML = `
+            <div class="recurso-info">
+              <h4>${r.titulo}</h4>
+              <span>${r.tipo.toUpperCase()} · ${r.area} · ${r.nivel}</span>
+            </div>
+            <button class="${r.tipo === 'pdf' ? 'pdf' : r.tipo === 'video' ? 'video' : 'ppt'}">${r.tipo === 'video' ? 'Ver' : 'Descargar'}</button>
+          `;
+          contenedor.appendChild(div);
+        });
+      }
+
+      render(recursos);
+
+      document.querySelectorAll('aside input').forEach(cb => {
+        cb.addEventListener('change', () => {
+          const tipos = Array.from(document.querySelectorAll('aside .filtro:first-of-type input:checked')).map(e => e.parentElement.textContent.trim().toLowerCase());
+          const niveles = Array.from(document.querySelectorAll('aside .filtro:last-of-type input:checked')).map(e => e.parentElement.textContent.trim());
+
+          const filtrados = recursos.filter(r => {
+            const tipoOk = tipos.length === 0 || tipos.some(t => r.tipo.includes(t.split(' ')[0]));
+            const nivelOk = niveles.length === 0 || niveles.includes(r.nivel);
+            return tipoOk && nivelOk;
+          });
+          render(filtrados);
+        });
+      });
+    </script>
+  </main>
+
+  <!-- Metadatos -->
+  <section class="detalles">
+    <h3>Metadatos del recurso</h3>
+    <ul>
+      <li><strong>Nivel educativo:</strong> Primaria, Secundaria</li>
+      <li><strong>Materia:</strong> Biología</li>
+      <li><strong>Autor:</strong> Docente de la institución</li>
+      <li><strong>Formato:</strong> PDF</li>
+      <li><strong>Idioma:</strong> Español</li>
+      <li><strong>Licencia:</strong> Creative Commons</li>
+    </ul>
+  </section>
+</div>
+
+<footer>
+  Repositorio educativo alojado en GitHub Pages · © 2026
+</footer>
+
+</body>
+</html>
